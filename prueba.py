@@ -12,7 +12,7 @@ valores_mazo_general = {
     "C1": 1, "C2": 2, "C3": 3, "C4": 4, "C5": 5, "C6": 6, "C7": 7, "C10": 0, "C11": 0, "C12": 0,
     "O1": 1, "O2": 2, "O3": 3, "O4": 4, "O5": 5, "O6": 6, "O7": 7, "O10": 0, "O11": 0, "O12": 0
 }
-
+#manos = random.sample(mazo_cartas , 6)
 mazo_jugador= random.sample(mazo_cartas, 3) #creo el mazo del jugador y elimino las cartas del mazo principal
 for carta_usada in mazo_jugador:
     mazo_cartas.remove(carta_usada)
@@ -32,5 +32,5 @@ valor_comp= sum (valores_mazo_general[valor]   #indico de donde tiene que sacar 
 
 print (mazo_jugador)
 print (mazo_comp)
-print ('valor jugador', valor_jugador)
-print ('valor_comp', valor_comp)
+print ('valor jugador:', valor_jugador)
+print ('valor_comp:', valor_comp)
