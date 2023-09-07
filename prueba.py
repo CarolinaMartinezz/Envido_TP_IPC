@@ -21,6 +21,20 @@ mazo_comp= random.sample (mazo_cartas, 3) #creo el mazo de la computadora y elim
 for carta_usada in mazo_comp:
     mazo_cartas.remove(carta_usada)
 
+palo1=mazo_jugador[0][0]
+palo2=mazo_jugador[1][0]
+palo3=mazo_jugador[2][0]
+
+palo1c=mazo_comp[0][0]
+palo2c=mazo_comp[1][0]
+palo3c=mazo_comp[2][0]
+
+
+
+
+
+
+
 #calculo valor del mazo
 valor_jugador= sum(valores_mazo_general[valor] #indico de donde tiene que sacar el valor
                    for valor in mazo_jugador)  #indico que cartas aplican a la suma
