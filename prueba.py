@@ -97,7 +97,9 @@ es_mano= random.choice(quien_mano)
 
 
 #presentación
-print ('----Bienvenido al simulador de envido----')
+print("--------------------------------------------")
+print ('★ Bienvenido al simulador de envido ★ ')
+print("--------------------------------------------")
 print (f'Sus cartas son: {mazo_jugador}')
 print (f'mazo computadora: {mazo_comp}')
     
