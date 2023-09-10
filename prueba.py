@@ -275,6 +275,7 @@ while puntos_total_jugador <15 and puntos_total_computadora <15:
                     puntos_total_jugador+=1
                     print('')
                     print (f'mazo computadora: {mazo_comp}')
+                    print (f'Usted tiene un envido de {puntos_jugador} y la computadora de {puntos_computadora}')
                     print ('Sumaste 1 punto!')
                 
                 elif puntos_computadora >=28:
@@ -330,27 +331,27 @@ while puntos_total_jugador <15 and puntos_total_computadora <15:
     print(f'La computadora tiene {puntos_total_computadora} punto/s.')
     print(f'Usted tiene {puntos_total_jugador} punto/s.')
     print ('✄┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈')
- 
-    print("======================================")
-    print ('         ༺★ Siguiente ronda ★༻')
-    print("======================================") 
     
 
-if puntos_total_computadora >= 15:
-    print("La computadora llegó a los 15 puntos, ganó")
-    print("======================================")
-    print ('         ༺★ FIN DEL JUEGO ★༻')
-    print("======================================") 
-elif puntos_total_jugador >= 15:
-    print("Llegaste a los 15 puntos! Ganaste")
-    print("======================================")
-    print ('         ༺★ FIN DEL JUEGO ★༻')
-    print("======================================") 
-elif puntos_computadora == 15 and puntos_total_jugador == 15:
-    print("Tanto vos como la computadora llegaron a los 15 puntos. Empate")
-    print("======================================")
-    print ('         ༺★ FIN DEL JUEGO ★༻')
-    print("======================================") 
+    if puntos_total_computadora >= 15:
+        print("La computadora llegó a los 15 puntos, ganó")
+        print("======================================")
+        print ('         ༺★ FIN DEL JUEGO ★༻')
+        print("======================================") 
+    elif puntos_total_jugador >= 15:
+        print("Llegaste a los 15 puntos, ganaste!")
+        print("======================================")
+        print ('         ༺★ FIN DEL JUEGO ★༻')
+        print("======================================") 
+    elif puntos_computadora == 15 and puntos_total_jugador == 15:
+        print("Tanto vos como la computadora llegaron a los 15 puntos. Empate")
+        print("======================================")
+        print ('         ༺★ FIN DEL JUEGO ★༻')
+        print("======================================") 
+    else:
+        print("======================================")
+        print ('         ༺★ Siguiente ronda ★༻')
+        print("======================================") 
 
 
 
