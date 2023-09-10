@@ -37,7 +37,7 @@ print (
 
     
     
-while puntos_total_jugador <=15 and puntos_total_computadora <=15:
+while puntos_total_jugador <15 and puntos_total_computadora <15:
     
     
     #REPARTIDOR DE CARTAS
@@ -114,20 +114,6 @@ while puntos_total_jugador <=15 and puntos_total_computadora <=15:
     
     print (f'Sus cartas son: {mazo_jugador}')
     print ('')
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -349,7 +335,25 @@ while puntos_total_jugador <=15 and puntos_total_computadora <=15:
     print ('         ༺★ Siguiente ronda ★༻')
     print("======================================") 
     
-    
+
+if puntos_total_computadora >= 15:
+    print("La computadora llegó a los 15 puntos, ganó")
+    print("======================================")
+    print ('         ༺★ FIN DEL JUEGO ★༻')
+    print("======================================") 
+elif puntos_total_jugador >= 15:
+    print("Llegaste a los 15 puntos! Ganaste")
+    print("======================================")
+    print ('         ༺★ FIN DEL JUEGO ★༻')
+    print("======================================") 
+elif puntos_computadora == 15 and puntos_total_jugador == 15:
+    print("Tanto vos como la computadora llegaron a los 15 puntos. Empate")
+    print("======================================")
+    print ('         ༺★ FIN DEL JUEGO ★༻')
+    print("======================================") 
+
+
+
     
 #agregar función que reconozca cuando alguien gana
 #explicar lo de volver a agregar cartas al mazo
