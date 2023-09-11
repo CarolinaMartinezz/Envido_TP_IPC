@@ -379,3 +379,4 @@ while puntos_total_jugador <15 and puntos_total_computadora <15:
 #agregar función que reconozca cuando alguien gana
 #explicar lo de volver a agregar cartas al mazo
 
+
