@@ -19,8 +19,6 @@ valores_mazo_general = {
 }
 
 
-
-
 #inicio de variable para calculo de puntos totales
 puntos_total_jugador=0
 puntos_total_computadora=0
@@ -31,19 +29,18 @@ quien_mano=['mano_jugador', 'mano_comp']
 es_mano= random.choice(quien_mano)
 
 
-
 #bienvenida
 print (
     '''
      ╔═.♣.═══════════════════════════════╗
-       Bienvenido al simulador de envido
+       𝓑𝓲𝓮𝓷𝓿𝓮𝓷𝓲𝓭𝓸 𝓪𝓵 𝓼𝓲𝓶𝓾𝓵𝓪𝓭𝓸𝓻 𝓭𝓮 𝓮𝓷𝓿𝓲𝓭𝓸
      ╚═══════════════════════════════.♠.═╝
     '''
 )
 
-#
+#no se
 puntos_fin_juego=int(input('¿Hasta cuantos puntos desea jugar?: '))
-print(f'----- jugando hasta {puntos_fin_juego} puntos -----')
+print(f'  ----- jugando hasta {puntos_fin_juego} puntos -----')
 print ('')
 
 
@@ -134,7 +131,7 @@ while puntos_total_jugador <puntos_fin_juego and puntos_total_computadora <punto
     #presentación
    
     print (f'Sus cartas son: {mazo_jugador}')
-    print(f'Tenes un envido de: {puntos_jugador}')
+    print(f'Tenés un envido de: {puntos_jugador}')
     print ('')
     
     #cambiar mano
@@ -226,17 +223,18 @@ while puntos_total_jugador <puntos_fin_juego and puntos_total_computadora <punto
                     print('  ◈ error - ingrese un valor válido ◈  ')
         else:
             print('  ◈ error - ingrese un valor válido ◈  ')
-               
-                   
-                   
-               
+                            
                    
                    
     elif es_mano=='mano_comp':
         print('La computadora es mano')
         if puntos_computadora <20:
-            eleccion='no envido'
-            print ('computadora: no envido')
+            posibilidades=['no envido','no envido', 'envido'] #más probable que salga 'no envido' (66%)
+            eleccion=random.choice(posibilidades)
+            if eleccion=='envido':
+                print ('computadora: envido')
+            elif eleccion=='no envido':
+                print ('computadora: no envido')
         elif puntos_computadora >=20:
             eleccion='envido'
             print ('computadora: envido')
@@ -357,22 +355,22 @@ while puntos_total_jugador <puntos_fin_juego and puntos_total_computadora <punto
     if puntos_total_computadora >= puntos_fin_juego:
         print(f"La computadora llegó a los {puntos_fin_juego} puntos, ganó")
         print("======================================")
-        print ('         ༺★ FIN DEL JUEGO ★༻')
+        print ('         ༺★ 𝓕𝓘𝓝  𝓓𝓔𝓛 𝓙𝓤𝓔𝓖𝓞 ★༻')
         print("======================================")
     elif puntos_total_jugador >= puntos_fin_juego:
         print(f"Llegaste a los {puntos_fin_juego} puntos, ganaste!")
         print("======================================")
-        print ('         ༺★ FIN DEL JUEGO ★༻')
+        print ('         ༺★ 𝓕𝓘𝓝  𝓓𝓔𝓛 𝓙𝓤𝓔𝓖𝓞 ★༻')
         print("======================================")
     elif puntos_computadora == puntos_fin_juego and puntos_total_jugador == puntos_fin_juego:
         print(f"Tanto vos como la computadora llegaron a los {puntos_fin_juego} puntos. Empate")
         print("======================================")
-        print ('         ༺★ FIN DEL JUEGO ★༻')
+        print ('         ༺★ 𝓕𝓘𝓝  𝓓𝓔𝓛 𝓙𝓤𝓔𝓖𝓞 ★༻')
         print("======================================")
     else:
-        print("======================================")
+        print("╔═════════════════════════════════════╗")
         print ('         ༺★ Siguiente ronda ★༻')
-        print("======================================")
+        print("╚═════════════════════════════════════╝")
 
 
 
