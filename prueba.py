@@ -117,6 +117,7 @@ while puntos_total_jugador <15 and puntos_total_computadora <15:
     #presentación
     
     print (f'Sus cartas son: {mazo_jugador}')
+    print(f'Tenes un envido de: {puntos_jugador}')
     print ('')
     
     
@@ -125,7 +126,7 @@ while puntos_total_jugador <15 and puntos_total_computadora <15:
     
     if es_mano=='mano_jugador':
         print('Usted es mano')
-        eleccion=input('¿Que queres jugar? ¿Envido o no envido?: ')
+        eleccion=input('¿Que queres jugar? ¿envido o no envido?: ')
         if eleccion=='envido':
             if puntos_computadora <20:
                 print ('computadora: no quiero')
@@ -220,7 +221,7 @@ while puntos_total_jugador <15 and puntos_total_computadora <15:
                 
                 
         if eleccion=='envido':
-            eleccion=input('¿Que queres jugar? ¿Quiero, no quiero o envido?: ')
+            eleccion=input('¿Que queres jugar? ¿quiero, no quiero o envido?: ')
             if eleccion == 'quiero':
                 if puntos_jugador>puntos_computadora:
                         puntos_total_jugador+=2
@@ -326,7 +327,7 @@ while puntos_total_jugador <15 and puntos_total_computadora <15:
     print('--------------------------------------')
     print(f'La computadora tiene {puntos_total_computadora} punto/s.')
     print(f'Usted tiene {puntos_total_jugador} punto/s.')
-    print ('✄┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈')
+    print ('┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈')
  
     print("======================================")
     print ('         ༺★ Siguiente ronda ★༻')
