@@ -5,6 +5,10 @@ mazo_cartas = ["E1", "E2", "E3", "E4", "E5", "E6", "E7", "E10", "E11", "E12",
                 "B1", "B2", "B3", "B4", "B5", "B6", "B7", "B10", "B11", "B12",
                 "C1", "C2", "C3", "C4", "C5", "C6", "C7", "C10", "C11", "C12",
                 "O1", "O2", "O3", "O4", "O5", "O6", "O7", "O10", "O11", "O12"]
+# E = espada
+# B = basto
+# C = copa
+# O = oro
 
 valores_mazo_general = {
     "E1": 1, "E2": 2, "E3": 3, "E4": 4, "E5": 5, "E6": 6, "E7": 7, "E10": 0, "E11": 0, "E12": 0,
@@ -15,17 +19,17 @@ valores_mazo_general = {
 
 
 
-    
-
 #inicio de variable para calculo de puntos totales
 puntos_total_jugador=0
 puntos_total_computadora=0
 
-#canto de envido
+
+#Elección random de quien es mano
 quien_mano=['mano_jugador', 'mano_comp']
 es_mano= random.choice(quien_mano)
 
-#bienvenida
+
+#Mensaje de bienvenida
 print (
     '''
      ╔═.♣.═══════════════════════════════╗ 
@@ -35,8 +39,8 @@ print (
 )
 
 
-    
-    
+#While de las rondas de la jugada, el cual seguirá funcionando hasta que el jugador o la computadora lleguen a 15 puntos
+   
 while puntos_total_jugador <15 and puntos_total_computadora <15:
     
     
@@ -50,7 +54,7 @@ while puntos_total_jugador <15 and puntos_total_computadora <15:
     for carta_usada in mazo_comp:
         mazo_cartas.remove(carta_usada)
     
-    #Vuelvo a agregar las cartas eliminadas del mazo
+    #Vuelvo a agregar las cartas eliminadas del mazo 
     mazo_cartas.extend(mazo_jugador) 
     mazo_cartas.extend(mazo_comp)
     
@@ -117,18 +121,11 @@ while puntos_total_jugador <15 and puntos_total_computadora <15:
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
+    #Si el jugador es mano:
     
     if es_mano=='mano_jugador':
         print('Usted es mano')
-        eleccion=input('envido, no envido: ')
+        eleccion=input('¿Que queres jugar? ¿Envido o no envido?: ')
         if eleccion=='envido':
             if puntos_computadora <20:
                 print ('computadora: no quiero')
@@ -151,7 +148,7 @@ while puntos_total_jugador <15 and puntos_total_computadora <15:
                     print('')
                     print (f'mazo computadora: {mazo_comp}')
                     print (f'Usted tiene un envido de {puntos_jugador} y la computadora de {puntos_computadora}')
-                    print ('Gana la computadora :( , suma 4 puntos.')
+                    print ('Gana la computadora :(. Suma 4 puntos.')
             
             else:
                 print ('computadora: quiero')
@@ -210,7 +207,7 @@ while puntos_total_jugador <15 and puntos_total_computadora <15:
                     
                     
                 
-                    
+    #Si la computadora es mano:              
                     
     elif es_mano=='mano_comp':
         print('La computadora es mano')
@@ -223,7 +220,7 @@ while puntos_total_jugador <15 and puntos_total_computadora <15:
                 
                 
         if eleccion=='envido':
-            eleccion=input('quiero, no quiero o envido: ')
+            eleccion=input('¿Que queres jugar? ¿Quiero, no quiero o envido?: ')
             if eleccion == 'quiero':
                 if puntos_jugador>puntos_computadora:
                         puntos_total_jugador+=2
@@ -324,7 +321,7 @@ while puntos_total_jugador <15 and puntos_total_computadora <15:
                 
     
          
-         
+    #Los siguientes prints se van a imprimir en cada ronda, ya que estan fuera del if pero dentro del while
                    
     print('--------------------------------------')
     print(f'La computadora tiene {puntos_total_computadora} punto/s.')
@@ -336,6 +333,7 @@ while puntos_total_jugador <15 and puntos_total_computadora <15:
     print("======================================") 
     
 
+#Cuando la computadora o el humano lleguen a 15 o más puntos, no se ejecutará el while sino que se ejecutará este if
 if puntos_total_computadora >= 15:
     print("La computadora llegó a los 15 puntos, ganó")
     print("======================================")
