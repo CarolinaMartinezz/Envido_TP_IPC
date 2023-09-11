@@ -39,11 +39,28 @@ print (
 )
 
 #no se
-puntos_fin_juego=int(input('¿Hasta cuantos puntos desea jugar?: '))
-print(f'  ----- jugando hasta {puntos_fin_juego} puntos -----')
-print ('')
+'''
+puntos_fin_juego=input('¿Hasta cuantos puntos desea jugar?: ')
+if puntos_fin_juego.isnumeric():
+    print(f'  ----- jugando hasta {puntos_fin_juego} puntos -----')
+    print ('')
+else:
+    print('  ◈ error - ingrese un valor válido ◈  ')
+    puntos_fin_juego=10
+    print(f'  ----- jugando hasta {puntos_fin_juego} puntos -----')
+    print ('')
+    '''
+i=0
+while i==0:
+    puntos_fin_juego=input('¿Hasta cuantos puntos desea jugar?: ')
+    if puntos_fin_juego.isnumeric():  #reconoce si un str es solo números
+        print(f'  ----- jugando hasta {puntos_fin_juego} puntos -----')
+        print ('')
+        i+=888
+    else:
+        print('  ◈ error - ingrese un valor válido ◈  ')
 
-
+puntos_fin_juego=int(puntos_fin_juego) #ahora si lo hago int para que funcione para el resto
    
 #While de las rondas de la jugada, el cual seguirá funcionando hasta que el jugador o la computadora lleguen a 15 puntos  
 while puntos_total_jugador <puntos_fin_juego and puntos_total_computadora <puntos_fin_juego:
