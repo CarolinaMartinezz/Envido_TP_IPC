@@ -38,9 +38,9 @@ es_mano= random.choice(quien_mano) # Utilizamos "random.choice" para seleccionar
 #Mensaje de bienvenida, el cual se verá solo al comienzo del juego
 print (
     '''
-     ╔═.♣.═══════════════════════════════╗
-       Bienvenido al simulador del envido
-     ╚═══════════════════════════════.♠.═╝
+     ╔═.♣.═════════════════════════════════╗
+        Bienvenido al simulador del envido
+     ╚═════════════════════════════════.♠.═╝
     '''
 )
 
@@ -270,7 +270,7 @@ while puntos_total_jugador <puntos_fin_juego and puntos_total_computadora <punto
                             
                    
     #Por otro lado, en el caso de que la computadora comience siendo mano:
-                
+    #Primero determino que es lo que va a querer la computadora.
     elif es_mano=='mano_comp':
         print('La computadora es mano')
         if puntos_computadora <20:
@@ -284,7 +284,7 @@ while puntos_total_jugador <puntos_fin_juego and puntos_total_computadora <punto
             eleccion='envido'
             print ('computadora: envido')
                
-    #Evaluo las posibilidades cuando la computadora quiere envido:
+        #Evaluo las posibilidades cuando la computadora quiere envido:
          
         if eleccion=='envido':
             eleccion= str.lower(input('¿Que queres jugar? ¿quiero, no quiero o envido?: '))
@@ -391,7 +391,7 @@ while puntos_total_jugador <puntos_fin_juego and puntos_total_computadora <punto
    
          
          
-    # Los siguientes prints son para que se anuncie el contador de puntos en cada ronda, especificando cuanros
+    # Los siguientes prints son para que se anuncie el contador de puntos en cada ronda, especificando cuantos
     # puntos tiene el usuario y cuantos la computadora
     print('--------------------------------------')
     print(f'La computadora tiene {puntos_total_computadora} punto/s.')
