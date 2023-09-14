@@ -198,19 +198,31 @@ while puntos_total_jugador <puntos_fin_juego and puntos_total_computadora <punto
             elif puntos_computadora >=20:
                 print ('computadora: envido')
                 #En este caso, como hay un envido-envido, se comparan los envidos del usuario y de la computadora
-                if puntos_jugador>puntos_computadora:
+                eleccion = input("¿quiero o no quiero?: ")
+                if eleccion == "quiero":
+                    if puntos_jugador>puntos_computadora:
                         puntos_total_jugador+=4
                         print('')
                         print (f'mazo computadora: {mazo_comp}')
                         print (f'Usted tiene un envido de {puntos_jugador} y la computadora de {puntos_computadora}')
                         print ('Sumaste 4 puntos!')
-                elif puntos_computadora>puntos_jugador:
-                    puntos_total_computadora+=4
-                    print('')
+                    elif puntos_computadora>puntos_jugador:
+                        puntos_total_computadora+=4
+                        print('')
+                        print (f'mazo computadora: {mazo_comp}')
+                        print (f'Usted tiene un envido de {puntos_jugador} y la computadora de {puntos_computadora}')
+                        print ('Gana la computadora :( , suma 4 puntos.')
+            
+                        
+                elif eleccion == "no quiero":
+                    puntos_total_computadora += 2
                     print (f'mazo computadora: {mazo_comp}')
                     print (f'Usted tiene un envido de {puntos_jugador} y la computadora de {puntos_computadora}')
-                    print ('Gana la computadora :( , suma 4 puntos.')
-           
+                    print ('Gana la computadora :( , suma 2 puntos.')
+                    
+                else:
+                    print("'  ◈ error - ingrese un valor válido ◈  '")
+                    
             else:
                 print ('computadora: quiero')
                 #Como la computadora quiere envido, se copara su envido con el del usuario
@@ -234,7 +246,7 @@ while puntos_total_jugador <puntos_fin_juego and puntos_total_computadora <punto
         #Al igual que anteriormente, la computadora, de acuerdo a cuanto envido tenga, responde con quiero, no quiero o envido:
             if puntos_computadora <20:
                 print ('computadora: no canta envido')
-                print ('Empate') #Como ninguno quiso envido, no se suman puntos
+                print ('Nadie cantó envido') #Como ninguno quiso envido, no se suman puntos
                 print('')
                 print (f'mazo computadora: {mazo_comp}')
                 print (f'Usted tiene un envido de {puntos_jugador} y la computadora de {puntos_computadora}')
@@ -275,7 +287,7 @@ while puntos_total_jugador <puntos_fin_juego and puntos_total_computadora <punto
         print('La computadora es mano')
         if puntos_computadora <20:
             posibilidades=['no envido','no envido', 'envido'] #más probable que salga 'no envido' (66%)
-            eleccion=random.choice(posibilidades)
+            eleccion=random.choice(posibilidades) 
             if eleccion=='envido':
                 print ('computadora: envido')
             elif eleccion=='no envido':
@@ -306,26 +318,40 @@ while puntos_total_jugador <puntos_fin_juego and puntos_total_computadora <punto
             elif eleccion=='no quiero':
                 puntos_total_computadora+=1
                 print ('gana la computadora :(')
+            
             elif eleccion=='envido':
-                if puntos_jugador>puntos_computadora:
-                        puntos_total_jugador+=4
-                        print('')
-                        print (f'mazo computadora: {mazo_comp}')
-                        print (f'Usted tiene un envido de {puntos_jugador} y la computadora de {puntos_computadora}')
-                        print ('Sumaste 4 puntos!')
-                   
-                elif puntos_computadora>puntos_jugador:
-                        puntos_total_computadora+=4
-                        print('')
-                        print (f'mazo computadora: {mazo_comp}')
-                        print (f'Usted tiene un envido de {puntos_jugador} y la computadora de {puntos_computadora}')
-                        print ('Gana la computadora :( , suma 4 puntos')
-                   
-                else:
-                    print ('Empate')
+                if puntos_computadora >= 20:
+                    print("computadora: quiero")
+                    
+                    if puntos_jugador>puntos_computadora:
+                            puntos_total_jugador+=4
+                            print('')
+                            print (f'mazo computadora: {mazo_comp}')
+                            print (f'Usted tiene un envido de {puntos_jugador} y la computadora de {puntos_computadora}')
+                            print ('Sumaste 4 puntos!')
+                    
+                    elif puntos_computadora>puntos_jugador:
+                            puntos_total_computadora+=4
+                            print('')
+                            print (f'mazo computadora: {mazo_comp}')
+                            print (f'Usted tiene un envido de {puntos_jugador} y la computadora de {puntos_computadora}')
+                            print ('Gana la computadora :( , suma 4 puntos')
+                    
+                    elif puntos_computadora == puntos_jugador:
+                        if es_mano == "mano_jugador":
+                            puntos_total_jugador += 4
+                        else:
+                            puntos_total_computadora +=4
+                
+                
+                elif puntos_computadora < 20:
+                    print("computadora: no quiero")
+                    puntos_total_jugador +=2
                     print('')
                     print (f'mazo computadora: {mazo_comp}')
                     print (f'Usted tiene un envido de {puntos_jugador} y la computadora de {puntos_computadora}')
+                    print ('Sumaste 2 puntos!')
+                 
             else:
                 print('  ◈ error - ingrese un valor válido ◈  ')
                
@@ -378,7 +404,7 @@ while puntos_total_jugador <puntos_fin_juego and puntos_total_computadora <punto
                    
                        
             elif eleccion_humano=='no envido':
-                print ('Empate')
+                print ('Nadie cantó envido')
                 print('')
                 print (f'mazo computadora: {mazo_comp}')
                 print (f'Usted tiene un envido de {puntos_jugador} y la computadora de {puntos_computadora}')
