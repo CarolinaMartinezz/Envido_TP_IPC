@@ -52,7 +52,7 @@ while i==0:
                                       #si el string introducido contiene solo números
         print(f'  ----- jugando hasta {puntos_fin_juego} puntos -----')
         print ('')
-        i+=888 #PREGUNTAR MARCOS
+        i+=888 #Si está bien escrito (es un numero), corta el while, sino sigue probando
     else:
         print('  ◈ error - ingrese un valor válido ◈  ')
 
@@ -87,7 +87,7 @@ while puntos_total_jugador <puntos_fin_juego and puntos_total_computadora <punto
    
     #Creo la variable "paloX" para poder acceder solamente al palo de la carta
     #Accedo a los palos de las cartas del usuario:
-    palo1=mazo_jugador[0][0] #
+    palo1=mazo_jugador[0][0] 
     palo2=mazo_jugador[1][0]
     palo3=mazo_jugador[2][0]
 
@@ -282,12 +282,14 @@ while puntos_total_jugador <puntos_fin_juego and puntos_total_computadora <punto
                             
                    
     #Por otro lado, en el caso de que la computadora comience siendo mano:
+    
     #Primero determino que es lo que va a querer la computadora.
     elif es_mano=='mano_comp':
         print('La computadora es mano')
         if puntos_computadora <20:
             posibilidades=['no envido','no envido', 'envido'] #más probable que salga 'no envido' (66%)
-            eleccion=random.choice(posibilidades) 
+            eleccion=random.choice(posibilidades) #Escribimos un random.choice para que la computadora tenga
+                                                  #la podibilidad de mentir
             if eleccion=='envido':
                 print ('computadora: envido')
             elif eleccion=='no envido':
@@ -413,8 +415,6 @@ while puntos_total_jugador <puntos_fin_juego and puntos_total_computadora <punto
         else:
             print('  ◈ error - ingrese un valor válido ◈  ')
            
-               
-   
          
          
     # Los siguientes prints son para que se anuncie el contador de puntos en cada ronda, especificando cuantos
