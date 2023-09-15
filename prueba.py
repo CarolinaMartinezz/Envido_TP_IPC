@@ -216,8 +216,16 @@ while puntos_total_jugador <puntos_fin_juego and puntos_total_computadora <punto
                     elif puntos_computadora == puntos_jugador: #evaluo si sus puntos son iguales
                         if es_mano == "mano_jugador":
                             puntos_total_jugador +=4
+                            print('')
+                            print (f'mazo computadora: {mazo_comp}')
+                            print (f'Usted tiene un envido de {puntos_jugador} y la computadora de {puntos_computadora}')
+                            print ('Mismo puntaje, usted suma 4 puntos')
                         else:
                             puntos_total_computadora +=4
+                            print('')
+                            print (f'mazo computadora: {mazo_comp}')
+                            print (f'Usted tiene un envido de {puntos_jugador} y la computadora de {puntos_computadora}')
+                            print ('Mismo puntaje, la computadora suma 4 puntos :(')
                
                 elif eleccion == "no quiero":
                     puntos_total_computadora += 2
